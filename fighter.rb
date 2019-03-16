@@ -1,3 +1,5 @@
+
+
 class Fighter
 
   attr_accessor :name, :health
@@ -17,6 +19,10 @@ class Fighter
 
   def death?
     health <= 0
+  end
+
+  def to_s
+    "I'm #{@name}. The player object."
   end
 
 end
