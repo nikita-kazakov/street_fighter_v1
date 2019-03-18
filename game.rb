@@ -1,6 +1,9 @@
 require_relative 'modules'
 require_relative 'fighter'
 
+#Break arrays and hashes into several modules where powerups can be stored.
+powerup = []
+
 class Game
 
   attr_accessor :fighters, :two_fighters
