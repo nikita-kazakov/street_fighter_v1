@@ -5,20 +5,26 @@ class Fighter
   attr_accessor :name, :health
 
   def initialize(name)
-    @name = name
+    @name = name.capitalize
     @health = 100
+
   end
 
-  def attack_punch(player)
-    player.health - 10
+
+
+  def attack_punch(fighter)
+    fighter.health -= 10
+    puts"#{name} got punched!"
   end
 
-  def attack_kick(player)
-    player.health - 20
+  def attack_kick(fighter)
+    fighter.health -= 20
+    puts"#{fighter.name} got kicked!. Health: #{fighter.health}"
   end
 
-  def death?
-    health <= 0
+  def dead?
+    puts "DEAD!" if health <= 0
+
   end
 
   def to_s
