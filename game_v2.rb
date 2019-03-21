@@ -23,7 +23,6 @@ class Game
 
   def fight
     GamesModule.game_start(25)
-
   end
 
 
@@ -46,8 +45,11 @@ game.fighter_add("dhalsim")
 game.fighter_add("balrog")
 #FightersModule.fighters_select_two
 #puts FightersModule::FIGHTERS_TWO_SELECTED
-game.fight
-FightersModule.fighters_stats_two
+#GamesModule.titleScreen
+#game.fight
+#FightersModule.fighters_stats_two
+
+GamesModule.titleScreen
 
 #game.fighters_list
 #p game.fighters
