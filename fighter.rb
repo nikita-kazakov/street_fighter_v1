@@ -10,21 +10,20 @@ class Fighter
 
   end
 
-
-
   def attack_punch(fighter)
     fighter.health -= 10
-    puts"#{name} got punched!"
+    puts"#{fighter.name} got punched! Health decreased by 10."
   end
 
   def attack_kick(fighter)
     fighter.health -= 20
-    puts"#{fighter.name} got kicked!. Health: #{fighter.health}"
+    puts"#{fighter.name} got kicked!. Health decreased by 20."
   end
 
   def dead?
-    puts "DEAD!" if health <= 0
-
+    if health <0
+      puts "#{@name} Died"
+    end
   end
 
   def to_s

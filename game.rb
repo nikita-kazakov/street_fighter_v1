@@ -1,3 +1,4 @@
+=begin
 require_relative 'modules'
 require_relative 'fighter'
 
@@ -8,18 +9,16 @@ class Game
 
   attr_accessor :fighters, :two_fighters
   def initialize
-    @fighters = []
     @two_fighters = []
-
   end
 
   def fighters_add(name)
-    @fighters << Fighter.new("#{name}")
+    Fighters::FIGHTERS_LIST << Fighter.new("#{name}")
   end
 
   def fighters_list
     puts "\nFighters List:"
-    @fighters.each do |fighter|
+    Fighters::FIGHTERS_LIST.each do |fighter|
       puts "I'm #{fighter.name}"
     end
   end
@@ -65,13 +64,20 @@ end
 #ryu = Fighter.new("ryu")
 
 game = Game.new()
-game.fighters_add("ken")
+game.fighters_add("sagat")
 game.fighters_add("ryu")
 game.fighters_add("blanka")
-p game.fighters
+game.fighters_add("chunli")
+game.fighters_add("dhalsim")
+game.fighters_add("balrog")
+Fighters.fighters_select_two
+puts Fighters::FIGHTERS_TWO_SELECTED
 
-game.fight
-p game.two_fighters
+#game.fighters_list
+#p game.fighters
+
+#game.fight
+#p game.two_fighters
 
 
 #ken.attack_kick(ryu)
@@ -82,3 +88,5 @@ p game.two_fighters
 
 #p ken
 #p ryu
+
+=end
