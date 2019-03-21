@@ -2,7 +2,7 @@
 
 class Fighter
 
-  attr_accessor :name, :health
+  attr_accessor :name, :health, :alive
 
   def initialize(name)
     @name = name.capitalize
@@ -38,8 +38,8 @@ class Fighter
     if health <= 0
       @alive = false
       puts "#{name} is DEAD!"
+      FightersModule.dead_player_remove
     end
-    @alive == false
   end
 
   def to_s
